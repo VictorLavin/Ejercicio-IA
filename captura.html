@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Captura de datos del jugador</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="tarjeta formulario">
+    <h2>Datos del Jugador</h2>
+
+    <form id="formJugador" action="index.php" method="post" enctype="multipart/form-data" novalidate>
+      <p>
+        <label for="nombre"><strong>Nombre:</strong></label><br>
+        <input type="text" id="nombre" name="nombre" maxlength="60" required>
+      </p>
+
+      <p>
+        <label for="alias"><strong>Alias:</strong></label><br>
+        <input type="text" id="alias" name="alias" maxlength="60" required>
+      </p>
+
+      <p>
+        <label for="edad"><strong>Edad:</strong></label><br>
+        <input type="number" id="edad" name="edad" min="1" max="120" required>
+      </p>
+
+      <fieldset>
+        <legend><strong>Armas seleccionadas:</strong></legend>
+        <label><input type="checkbox" name="armas[]" value="Maza"> Maza</label>
+        <label><input type="checkbox" name="armas[]" value="Martillo"> Martillo</label>
+        <label><input type="checkbox" name="armas[]" value="Espada"> Espada</label>
+        <label><input type="checkbox" name="armas[]" value="Arco"> Arco</label>
+      </fieldset>
+
+      <fieldset>
+        <legend><strong>¿Practica artes mágicas?:</strong></legend>
+        <label><input type="radio" name="magia" value="Sí" required> Sí</label>
+        <label><input type="radio" name="magia" value="No"> No</label>
+      </fieldset>
+
+      <p>
+        <label for="imagen"><strong>Imagen (opcional, solo PNG, máx. 10 KB):</strong></label><br>
+        <input type="hidden" name="MAX_FILE_SIZE" value="10240">
+        <input type="file" id="imagen" name="imagen" accept="image/png">
+      </p>
+
+      <p id="mensaje" class="error" role="alert"></p>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
